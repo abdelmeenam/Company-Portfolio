@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\Service\CreateServiceRequest;
 use App\Http\Requests\Service\DeleteServiceRequest;
-use App\Http\Requests\Service\UpdateServiceRequest;
+use App\Http\Requests\Service\UpdatePortfolioRequest;
 use App\Http\Traits\ImagesTrait;
 
 class ServiceController extends Controller
@@ -48,7 +48,7 @@ class ServiceController extends Controller
         return view('Admin.service.edit', compact('service'));
     }
 
-    public function update(UpdateServiceRequest $request)
+    public function update(UpdatePortfolioRequest $request)
     {
         $service = Service::find($request->service_id);
         if ($request->has('icon')) {

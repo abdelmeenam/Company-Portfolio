@@ -109,7 +109,7 @@
                             <a href="{{route('admin.service.all') }}"> Services </a>
                         </li>
                         <li>
-                            <a href="index2.html"> Sales </a>
+                            <a href="{{route('admin.portfolio.all') }}"> Portfolio </a>
                         </li>
                     </ul>
 
