@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminControllers\AuthController;
 use App\Http\Controllers\AdminControllers\ContactController;
 use App\Http\Controllers\UserControllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -10,13 +11,17 @@ use App\Http\Controllers\AdminControllers\TeamController;
 use App\Http\Controllers\AdminControllers\AboutController;
 
 
+
+//--------------------------------------------------------------------------
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::post('/contact', [ContactController::class, 'sendMessage'])->name('message.send');
 
-
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
-
+Route::get('/admin/login', [AuthController::class, 'loginPage'])->name('admin.login');
+Route::post('/admin/login', [AuthController::class, 'login'])->name('admin.postLogin');
+//--------------------------------------------------------------------------
+Route::group(['prefix' => 'admin', 'as' => 'admin.' ,'middleware' => 'auth'], function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('index');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::group(['prefix' => 'service', 'as' => 'service.'], function () {
         Route::get('/', [ServiceController::class, 'index'])->name('all');
@@ -59,6 +64,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::post('/store', [ContactController::class, 'store'])->name('store');
         Route::delete('/delete', [ContactController::class, 'delete'])->name('delete');
     });
-
 
 });
