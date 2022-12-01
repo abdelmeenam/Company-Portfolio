@@ -105,11 +105,22 @@
                     </a>
 
                     <ul class="collapse submenu recent-submenu mini-recent-submenu list-unstyled show" id="dashboard" data-parent="#accordionExample">
+
                         <li>
                             <a href="{{route('admin.service.all') }}"> Services </a>
                         </li>
+
                         <li>
                             <a href="{{route('admin.portfolio.all') }}"> Portfolio </a>
+                        </li>
+                        <li>
+                            <a href="{{route('admin.team.all') }}"> Team </a>
+                        </li>
+                        <li>
+                            <a href="{{route('admin.about.all') }}"> About </a>
+                        </li>
+                        <li>
+                            <a href="{{route('admin.contact.all') }}"> Contacts </a>
                         </li>
                     </ul>
 
