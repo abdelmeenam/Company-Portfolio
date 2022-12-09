@@ -3,31 +3,28 @@
 namespace App\Http\Controllers\AdminControllers;
 
 use App\Http\Controllers\Controller;
-
+use App\Http\Interfaces\AdminInterfaces\AuthInterface;
 use App\Http\Requests\Auth\LoginRequest;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
-use RealRashid\SweetAlert\Facades\Alert;
+
 
 class AuthController extends Controller
 {
+
+    public $AuthInterface;
+
+    public function __construct(AuthInterface $AuthInterface){
+        $this->AuthInterface = $AuthInterface;
+    }
+
     public function loginPage(){
-        return view('admin.login');
+        return $this->AuthInterface->loginPage();
     }
 
     public function login(LoginRequest $request){
-        $credentials = $request->only('email' ,'password');
-        if (Auth::attempt($credentials)){
-            return redirect(route('admin.index'));
-        }
-        Alert::error('Error', 'user is not found');
-        return redirect()->back() ;
+        return $this->AuthInterface->LoginRequest($request);
     }
 
     public function logout(){
-        Session::flush();
-        Auth::logout();
-        return redirect(route('admin.login'));
+        return $this->AuthInterface->logout();
     }
-
 }

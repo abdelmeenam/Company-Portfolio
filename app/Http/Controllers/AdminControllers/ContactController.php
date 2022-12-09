@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\AdminControllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Interfaces\AdminInterfaces\ContactInterface;
 use App\Http\Requests\contact\CreateContactRequest;
 use App\Http\Requests\contact\DeleteContactRequest;
 use App\Models\Contact;
@@ -11,34 +12,23 @@ use RealRashid\SweetAlert\Facades\Alert;
 class ContactController extends Controller
 {
 
+    public $ContactInterface;
+
+    public function __construct(ContactInterface $ContactInterface){
+        $this->ContactInterface = $ContactInterface;
+    }
+
     public function index(){
-        $contacts = Contact::get();
-        return view('Admin.contact.contacts', compact('contacts'));
+        return $this->ContactInterface->index();
     }
 
     public function delete(DeleteContactRequest $request)
     {
-        $contact = Contact::find($request->contact_id);
-        $contact->delete();
-
-        Alert::success('Success', 'Contact was deleted');
-        return redirect()->back();
+        return $this->ContactInterface->delete($request);
     }
 
     public function sendMessage(CreateContactRequest $request){
-        $name = $request->name;
-        $email = $request->email;
-        $phone = $request->phone;
-        $message = $request->message;
-        Contact::create([
-            'name' => $name,
-            'email' => $email,
-            'phone' => $phone,
-            'message' => $message,
-
-        ]);
-        Alert::success('Success', 'Message was sent');
-        return redirect()->back();
+        return $this->ContactInterface->loginPsendMessageage($request);
     }
 
 }
