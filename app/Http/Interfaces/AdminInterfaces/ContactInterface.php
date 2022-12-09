@@ -1,7 +1,6 @@
 <?php
 namespace App\Http\Interfaces\AdminInterfaces;
 
-
 interface ContactInterface
 {
     public function index();

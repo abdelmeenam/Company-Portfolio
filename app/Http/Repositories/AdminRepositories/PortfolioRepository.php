@@ -79,7 +79,6 @@ class PortfolioRepository implements PortfolioInterface
         return redirect()->back();
     }
 
-
     public function delete( $request)
     {
         $portfolio = Portfolio::find($request->portfolio_id);

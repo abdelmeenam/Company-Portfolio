@@ -6,6 +6,6 @@ interface PortfolioInterface{
     public function create();
     public function store($request);
     public function delete($request);
-    public function edit($id);
+    public function edit($portfolio_id);
     public function update($request);
 }

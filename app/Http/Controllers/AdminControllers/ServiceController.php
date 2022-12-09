@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\AdminControllers;
-
 use App\Http\Interfaces\AdminInterfaces\ServiceInterface;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Service\CreateServiceRequest;
@@ -28,22 +27,22 @@ class ServiceController extends Controller
 
     public function store(CreateServiceRequest $request)
     {
-        return $this->ServiceInterface->store();
+        return $this->ServiceInterface->store($request);
     }
 
     public function edit($service_id)
     {
-        return $this->ServiceInterface->edit();
+        return $this->ServiceInterface->edit($service_id);
     }
 
     public function update(UpdatePortfolioRequest $request)
     {
-        return $this->ServiceInterface->update();
+        return $this->ServiceInterface->update($request);
     }
 
     public function delete(DeleteServiceRequest $request)
     {
-        return $this->ServiceInterface->delete();
+        return $this->ServiceInterface->delete($request);
     }
 
 }

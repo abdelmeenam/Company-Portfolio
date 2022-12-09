@@ -1,7 +1,5 @@
 <?php
 namespace App\Http\Repositories\AdminRepositories;
-
-
 use App\Http\Interfaces\AdminInterfaces\ServiceInterface;
 use App\Http\Traits\ImagesTrait;
 use App\Models\Service;

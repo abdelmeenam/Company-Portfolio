@@ -28,22 +28,22 @@ class PortfolioController extends Controller
 
     public function store(CreatePortfolioRequest $request)
     {
-        return $this->PortfolioInterface->store();
+        return $this->PortfolioInterface->store($request);
 
     }
 
     public function edit($portfolio_id)
     {
-        return $this->PortfolioInterface->edit();
+        return $this->PortfolioInterface->edit($portfolio_id);
     }
 
     public function update(UpdatePortfolioRequest $request)
     {
-        return $this->PortfolioInterface->update();
+        return $this->PortfolioInterface->update($request);
     }
 
     public function delete(DeletePortfolioRequest $request)
     {
-        return $this->PortfolioInterface->delete();
+        return $this->PortfolioInterface->delete($request);
     }
 }

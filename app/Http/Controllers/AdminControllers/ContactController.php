@@ -28,7 +28,7 @@ class ContactController extends Controller
     }
 
     public function sendMessage(CreateContactRequest $request){
-        return $this->ContactInterface->loginPsendMessageage($request);
+        return $this->ContactInterface->sendMessage($request);
     }
 
 }
