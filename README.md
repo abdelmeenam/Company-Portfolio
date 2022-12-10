@@ -47,15 +47,15 @@ Laravel application for company portfolio with admin dashboard.
 
 - Add service
 
-![My Image](readme/add service.png)
+![My Image](readme/addservice.png)
 
 - Edit service
 
-![My Image](readme/Edit service.png)
+![My Image](readme/Editservice.png)
 
 - service validations
 
-![My Image](readme/service validation.png)
+![My Image](readme/servicevalidation.png)
 
 - Messages from people
 
