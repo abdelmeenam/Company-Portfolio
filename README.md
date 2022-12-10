@@ -8,7 +8,7 @@ Laravel application for company portfolio with admin dashboard.
 
 - The project is based on Repository pattern. 
 - All inputs have backend validations by using Custom validation Requests.
-- Customizing successfull and error results by using SweetAlert Package.
+- Handeling successfull and error results by using SweetAlert Package.
 - Well organized Routes.
 
 
@@ -47,15 +47,15 @@ Laravel application for company portfolio with admin dashboard.
 
 - Add service
 
-![My Image](readme/add service.png)
+![My Image](readme/addservice.png)
 
 - Edit service
 
-![My Image](readme/Edit service.png)
+![My Image](readme/Editservice.png)
 
 - service validations
 
-![My Image](readme/service validation.png)
+![My Image](readme/servicevalidation.png)
 
 - Messages from people
 
