@@ -13,11 +13,13 @@ use App\Http\Controllers\AdminControllers\AboutController;
 
 
 //--------------------------------------------------------------------------
+
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::post('/contact', [ContactController::class, 'sendMessage'])->name('message.send');
 
 Route::get('/admin/login', [AuthController::class, 'loginPage'])->name('admin.login');
 Route::post('/admin/login', [AuthController::class, 'login'])->name('admin.postLogin');
+
 //--------------------------------------------------------------------------
 Route::group(['prefix' => 'admin', 'as' => 'admin.' ,'middleware' => 'auth'], function () {
     Route::get('/', [AdminHomeController::class, 'index'])->name('index');

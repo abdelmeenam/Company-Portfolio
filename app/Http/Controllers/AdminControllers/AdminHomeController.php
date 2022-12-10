@@ -10,7 +10,7 @@ class AdminHomeController extends Controller
     public $AdminHomeInterface;
     public function __construct(AdminHomeInterface $AdminHomeInterface)
     {
-        $this->AdminHomeInterface = $AdminHomeInterface;
+          $this->AdminHomeInterface = $AdminHomeInterface;
     }
 
     public function index()

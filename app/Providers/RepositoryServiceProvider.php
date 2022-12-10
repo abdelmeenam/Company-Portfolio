@@ -48,6 +48,11 @@ class RepositoryServiceProvider extends ServiceProvider
             'App\Http\Repositories\AdminRepositories\ContactRepository'
         );
 
+        $this->app->bind(
+            'App\Http\Interfaces\AdminInterfaces\AdminHomeInterface' ,
+            'App\Http\Repositories\AdminRepositories\AdminHomeRepository'
+        );
+
 
     }
 

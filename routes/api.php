@@ -18,5 +18,3 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
-
-Route::post('test' , [\App\Http\Controllers\ApiTest::class , 'index']);

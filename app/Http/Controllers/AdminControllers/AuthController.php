@@ -21,7 +21,7 @@ class AuthController extends Controller
     }
 
     public function login(LoginRequest $request){
-        return $this->AuthInterface->LoginRequest($request);
+        return $this->AuthInterface->login($request);
     }
 
     public function logout(){
